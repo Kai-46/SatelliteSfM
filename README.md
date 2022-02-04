@@ -39,8 +39,8 @@ The ```--enable_debug``` option outputs some visualization helpful debugging the
 ## Outputs
 - ```{output_folder}/images/``` folder contains the png images
 - ```{output_folder}/cameras_adjusted/``` folder contains the bundle-adjusted pinhole cameras
-- ```enu_bbx_adjusted.json``` contains the scene bounding box in the local ENU Euclidean coordinate system.
-- ```enu_observer_latlonalt.json``` contains the observer coordinate for defining the local ENU coordinate; essentially, this observer coordinate is only necessary for coordinate conversion between local ENU and global latitude-longitude-altitude.
+- ```{output_folder}/enu_bbx_adjusted.json``` contains the scene bounding box in the local ENU Euclidean coordinate system.
+- ```{output_folder}/enu_observer_latlonalt.json``` contains the observer coordinate for defining the local ENU coordinate; essentially, this observer coordinate is only necessary for coordinate conversion between local ENU and global latitude-longitude-altitude.
 
 ## Citations
 ```
