@@ -42,12 +42,14 @@ The ```--enable_debug``` option outputs some visualization helpful debugging the
 - ```{output_folder}/enu_bbx_adjusted.json``` contains the scene bounding box in the local ENU Euclidean coordinate system.
 - ```{output_folder}/enu_observer_latlonalt.json``` contains the observer coordinate for defining the local ENU coordinate; essentially, this observer coordinate is only necessary for coordinate conversion between local ENU and global latitude-longitude-altitude.
 
+If you turn on the ```--enable_debug``` option, you might want to dig into the folder ```{output_folder}/debug_sfm``` for visuals, etc.
+
 ## Citations
 ```
 @inproceedings{VisSat-2019,
- title={Leveraging Vision Reconstruction Pipelines for Satellite Imagery},
+  title={Leveraging Vision Reconstruction Pipelines for Satellite Imagery},
   author={Zhang, Kai and Sun, Jin and Snavely, Noah},
-   booktitle={IEEE International Conference on Computer Vision Workshops},
-    year={2019}
+  booktitle={IEEE International Conference on Computer Vision Workshops},
+  year={2019}
 }
 ```
