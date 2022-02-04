@@ -8,7 +8,7 @@ Maintained by [Kai Zhang](https://kai-46.github.io/website/).
 - The outputs are png images and OpenCV-compatible pinhole camreas readily deployable to multi-view stereo pipelines targetting ground-level images.
 
 ## Installation
-Assume you are on a Linux machine, and have conda installed. Then to install this library, simply by:
+Assume you are on a Linux machine with at least one GPU, and have conda installed. Then to install this library, simply by:
 ```bash
 . ./env.sh
 ```
