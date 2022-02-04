@@ -5,7 +5,7 @@ Maintained by [Kai Zhang](https://kai-46.github.io/website/).
 ## Overview
 - This is a library dedicated to solving the satellite structure from motion problem.
 - It's a wrapper of the [VisSatSatelliteStereo repo](https://github.com/Kai-46/VisSatSatelliteStereo) for easier use.
-- The outputs are png images and OpenCV-compatible pinhole camreas readily deployable to multi-view stereo pipelines targetting ground-level images.
+- The outputs are png images and **OpenCV-compatible** pinhole camreas readily deployable to multi-view stereo pipelines targetting ground-level images.
 
 ## Installation
 Assume you are on a Linux machine with at least one GPU, and have conda installed. Then to install this library, simply by:
@@ -40,7 +40,7 @@ The ```--enable_debug``` option outputs some visualization helpful debugging the
 
 ## Outputs
 - ```{output_folder}/images/``` folder contains the png images
-- ```{output_folder}/cameras_adjusted/``` folder contains the bundle-adjusted pinhole cameras
+- ```{output_folder}/cameras_adjusted/``` folder contains the bundle-adjusted pinhole cameras; each camera is represented by a pair of 4x4 K, W2C matrices that are OpenCV-compatible.
 - ```{output_folder}/enu_bbx_adjusted.json``` contains the scene bounding box in the local ENU Euclidean coordinate system.
 - ```{output_folder}/enu_observer_latlonalt.json``` contains the observer coordinate for defining the local ENU coordinate; essentially, this observer coordinate is only necessary for coordinate conversion between local ENU and global latitude-longitude-altitude.
 
