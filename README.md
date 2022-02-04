@@ -28,11 +28,13 @@ Download one example data from this [google drive](https://drive.google.com/driv
         - ...
     - latlonalt_bbx.json
 ```
-, where ```latlonalt_bbx.json``` specifies the bounding box for the site of interest in the global (latitude, longitude, altitude) coordinate system.
+, where ```latlonalt_bbx.json``` specifies the bounding box for the site of interest in the global (latitude, longitude, altitude) coordinate system. 
+
+If you are not sure what is a reasonably good altitude range, you can put random numbers in the json file, but you have to enable the ```--use_srtm4``` option below.  
 
 ## Run Structure from Motion
 ```bash
-python satellite_sfm.py --input_folder examples/inputs --output_folder examples/outputs --run_sfm [--enable_debug]
+python satellite_sfm.py --input_folder examples/inputs --output_folder examples/outputs --run_sfm [--use_srtm4] [--enable_debug]
 ```
 The ```--enable_debug``` option outputs some visualization helpful debugging the structure from motion quality.
 

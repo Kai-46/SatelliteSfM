@@ -7,5 +7,7 @@ pip install numpy matplotlib opencv-python pyexr open3d tqdm icecream imageio-ff
 pip install utm pyproj pymap3d
 conda install -y -c conda-forge gdal
 pip install trimesh pyquaternion
+pip install srtm4
+
 
 
