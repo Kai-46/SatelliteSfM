@@ -17,42 +17,6 @@ from preprocess_sfm.preprocess_sfm import preprocess_sfm
 
 rmext = lambda x: x[0:x.rfind('.')]
 
-def _generate_mvs_problems(out_folder, height_resolution=0.2):
-    '''
-        out_folder: same structure as preprocess_image_set
-        height_resolution: meters
-    '''
-    capture_dates = {}
-    for x in os.listdir(os.path.join(out_folder, 'images')):
-        if x.endswith('.png'):
-            year, month, day = json.load(open(os.path.join(out_folder, 'metas', x[:-4]+'.json')))['capture_date']
-            capture_dates[x] = datetime.date(year, month, day)
-
-    try:
-        u_minmax = json.load(open(os.path.join(out_folder, 'enu_bbx_adjusted.json')))['u_minmax']
-    except:
-        u_minmax = json.load(open(os.path.join(out_folder, 'enu_bbx.json')))['u_minmax']
-
-    mvs_problems = []
-    img_names = list(capture_dates.keys())
-    for ref_name in img_names:
-        src_names = [x for x in img_names if x != ref_name]
-        src_names = sorted(src_names, key=lambda x: abs(capture_dates[x] - capture_dates[ref_name]))
-        src_names = src_names[:2]
-
-        depth_min, depth_max = u_minmax[0], u_minmax[1]
-        num_depth = int((depth_max - depth_min) / height_resolution) + 1
-        depth_max = depth_min + height_resolution * (num_depth - 1)
-
-        mvs_problems.append({
-            'views': [ref_name, ] + src_names,
-            'depth_range': [depth_min, depth_max, num_depth]
-        })
-    with open(os.path.join(out_folder, 'mvs_problems.json'), 'w') as fp:
-        json.dump(mvs_problems, fp, indent=2)
-
-    ic(mvs_problems[:3])
-
 
 def _pad_images_to_samesize(in_folder, out_folder):
     os.makedirs(out_folder, exist_ok=True)
@@ -103,7 +67,7 @@ def _preprocess_single_tif(args):
         json.dump(cam_dict, fp, indent=2)
 
 
-def preprocess_image_set(out_folder, tif_image_folder, lat_minmax, lon_minmax, alt_minmax, 
+def preprocess_image_set(out_folder, tif_image_folder, lat_minmax, lon_minmax, alt_minmax,
                          enable_debug=False, run_sfm=False):
     '''
         tif_image_folder: folder containing tif images for the site; see ../examples/dfc_data/inputs
@@ -134,7 +98,7 @@ def preprocess_image_set(out_folder, tif_image_folder, lat_minmax, lon_minmax, a
 
     latlonalt_pts = np.array(list(itertools.product(list(lat_minmax), list(lon_minmax), list(alt_minmax))))
     # ic(latlonalt_pts.shape)
-    e, n, u = latlonalt_to_enu(latlonalt_pts[:, 0], latlonalt_pts[:, 1], latlonalt_pts[:, 2], 
+    e, n, u = latlonalt_to_enu(latlonalt_pts[:, 0], latlonalt_pts[:, 1], latlonalt_pts[:, 2],
                                observer_lat, observer_lon, observer_alt)
     enu_bbx = {
         'e_minmax': [np.min(e), np.max(e)],
@@ -166,10 +130,6 @@ def preprocess_image_set(out_folder, tif_image_folder, lat_minmax, lon_minmax, a
     #      and output to {out_folder}/cameras_adjusted, {out_folder}/enu_bbx_adjusted.json, and {out_folder}/debug_sfm
     if run_sfm:
         preprocess_sfm(out_folder)
-
-    # generate mvs problems
-    _generate_mvs_problems(out_folder, height_resolution=0.2)
-
 
     # warp src to ref for debugging purpose
     if enable_debug:

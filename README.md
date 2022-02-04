@@ -55,3 +55,7 @@ If you turn on the ```--enable_debug``` option, you might want to dig into the f
   year={2019}
 }
 ```
+
+## Example results
+![Input images](./readme_resources/example_data.gif)
+![Sparse point cloud](./readme_resources/example_data_sfm.gif)
