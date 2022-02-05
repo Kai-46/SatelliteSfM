@@ -83,6 +83,33 @@ One natural task following this SatelliteSfM is to acquire the dense reconstruct
 ### pitfall of float32 arithmetic
 ![numeric precison](./readme_resources/numeric_precision.png)
 
+### overcome float32 pitfall for NeRF
+```python
+import torch
+
+def pixel2ray(col: torch.Tensor, row: torch.Tensor, K: torch.DoubleTensor, W2C: torch.DoubleTensor):
+    '''
+    Assume scene is centered and inside unit sphere.
+
+    col, row: both [N, ]; float32
+    K, W2C: 4x4 opencv-compatible intrinsic and W2C matrices; float64
+
+    return:
+        ray_o, ray_d: [N, 3]; float32
+    '''
+    C2W = torch.inverse(W2C)  # float64
+    px = torch.stack((col, row, torch.ones_like(col)), axis=-1).unsqueeze(-1)  # [N, 3, 1]; float64
+    K_inv = torch.inverse(K[:3, :3]).unsqueeze(0).expand(px.shape[0], -1, -1)  # [N, 3, 3]; float64
+    c2w_rot = C2W[:3, :3].unsqueeze(0).expand(px.shape[0], -1, -1) # [N, 3, 3]; float64
+    ray_d = torch.matmul(c2w_rot, torch.matmul(K_inv, px.double())) # [N, 3, 1]; float64
+    ray_d = (ray_d / ray_d.norm(dim=1, keepdims=True)).squeeze(-1) # [N, 3]; float64
+
+    ray_o = C2W[:3, 3].unsqueeze(0).expand(px.shape[0], -1) # [N, 3]; float64
+    # shift ray_o along ray_d towards the scene in order to shrink the huge depth
+    shift = torch.norm(ray_o, dim=-1) - 5.  # [N, ]; float64; 5. here is a small margin
+    ray_o = ray_o + ray_d * shift.unsqueeze(-1)  # [N, 3]; float64
+    return ray_o.float(), ray_d.float()
+```
 
 ## More handy scripts are coming
 Stay tuned :-)
