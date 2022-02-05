@@ -61,7 +61,8 @@ If you turn on the ```--enable_debug``` option, you might want to dig into the f
 ![Input images](./readme_resources/example_data.gif)
 ### sparse point cloud ouput by SfM
 ![Sparse point cloud](./readme_resources/example_data_sfm.gif)
-### use a sequence of height planes to homograhpy-warp one view, then average with another
+### homograhpy-warp one view, then average with another by a plane sequence
+[high-res video](https://drive.google.com/file/d/13TshDCsHTx0J7X6UFd0zglutQkD8NgyK/view?usp=sharing)
 ![Sweep plane](./readme_resources/sweep_plane.gif)
 
 ## More handy scripts are coming
