@@ -111,5 +111,8 @@ def pixel2ray(col: torch.Tensor, row: torch.Tensor, K: torch.DoubleTensor, W2C: 
     return ray_o.float(), ray_d.float()
 ```
 
+### overcome float32 pitfall for plane sweep stereo or patch-based stereo
+to be filled...
+
 ## More handy scripts are coming
 Stay tuned :-)
