@@ -61,3 +61,6 @@ If you turn on the ```--enable_debug``` option, you might want to dig into the f
 ![Input images](./readme_resources/example_data.gif)
 ### sparse point cloud ouput by SfM
 ![Sparse point cloud](./readme_resources/example_data_sfm.gif)
+
+## More handy scripts are coming
+Stay tuned :-)
