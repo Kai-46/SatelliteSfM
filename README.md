@@ -69,7 +69,7 @@ If you turn on the ```--enable_debug``` option, you might want to dig into the f
 python inspect_epipolar_geometry.py
 ```
 ![inspect epipolar](./readme_resources/debug_epipolar.png)
-### get zero-skew instrincis marix
+### get zero-skew intrincics marix
 ```
 python skew_correct.py --input_folder ./examples/outputs ./examples/outputs_zeroskew
 ```
