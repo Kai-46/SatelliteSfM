@@ -75,5 +75,14 @@ python skew_correct.py --input_folder ./examples/outputs ./examples/outputs_zero
 ```
 ![skew correct](./readme_resources/skew_correct.png)
 
+## Downstream applications
+One natural task following this SatelliteSfM is to acquire the dense reconstruction by classical patch-based MVS, or mordern deep MVS, or even neural rendering like NeRF. When working with these downstream algorithms, be careful of the float32 pitfall caused by the huge depth values as a result of **satellite cameras being distant from the scene**; this is particularly worthy of attention with the prevalent float32 GPU computing.  
+
+[Note: this SatelliteSfM library doesn't have such issue for the use of float64.]
+
+### pitfall of float32 arithmetic
+![numeric precison](./readme_resources/numeric_precision.png)
+
+
 ## More handy scripts are coming
 Stay tuned :-)
