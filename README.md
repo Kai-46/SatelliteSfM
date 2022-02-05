@@ -64,6 +64,12 @@ If you turn on the ```--enable_debug``` option, you might want to dig into the f
 ### homograhpy-warp one view, then average with another by a plane sequence
 ![Sweep plane](./readme_resources/sweep_plane.gif)
 [high-res video](https://drive.google.com/file/d/13TshDCsHTx0J7X6UFd0zglutQkD8NgyK/view?usp=sharing)
+### inspect epipolar geometry
+```
+python inspect_epipolar_geometry.py
+```
+![inspect epipolar](./readme_resources/debug_epipolar.png)
+
 
 ## More handy scripts are coming
 Stay tuned :-)
