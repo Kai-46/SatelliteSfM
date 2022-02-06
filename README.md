@@ -84,6 +84,11 @@ One natural task following this SatelliteSfM is to acquire the dense reconstruct
 ![numeric precison](./readme_resources/numeric_precision.png)
 
 ### overcome float32 pitfall for NeRF
+Center and scale scene to be inside unit sphere by:
+```bash
+python normalize_sfm_reconstruction.py
+```
+Modify how ```pixel2ray``` is computed for NeRF-based models, while keeping the other parts unchanged: 
 ```python
 import torch
 
