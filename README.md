@@ -54,6 +54,13 @@ If you turn on the ```--enable_debug``` option, you might want to dig into the f
   booktitle={IEEE International Conference on Computer Vision Workshops},
   year={2019}
 }
+
+@inproceedings{schoenberger2016sfm,
+  author={Sch\"{o}nberger, Johannes Lutz and Frahm, Jan-Michael},
+  title={Structure-from-Motion Revisited},
+  booktitle={Conference on Computer Vision and Pattern Recognition (CVPR)},
+  year={2016},
+}
 ```
 
 ## Example results
