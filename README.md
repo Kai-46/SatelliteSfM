@@ -124,6 +124,9 @@ def pixel2ray(col: torch.Tensor, row: torch.Tensor, K: torch.DoubleTensor, W2C: 
 ```
 ![novel view](./readme_resources/novel_view.gif)
 
+### overcome float32 pitfall for neural point based graphics
+to be filled...
+
 ### overcome float32 pitfall for plane sweep stereo, or patch-based stereo, or deep stereo
 to be filled...
 
