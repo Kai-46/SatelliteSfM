@@ -122,7 +122,24 @@ def pixel2ray(col: torch.Tensor, row: torch.Tensor, K: torch.DoubleTensor, W2C: 
     ray_o = ray_o + ray_d * shift.unsqueeze(-1)  # [N, 3]; float64
     return ray_o.float(), ray_d.float()
 ```
-![novel view](./readme_resources/novel_view.gif)
+<!-- ![novel view](./readme_resources/novel_view.gif) -->
+https://user-images.githubusercontent.com/21653654/153779703-36b50265-ae3b-41ac-8139-2e0bf081f28d.mp4
+
+https://user-images.githubusercontent.com/21653654/153779789-93f68ce9-9cc4-4947-81de-d6d2104ae0ac.mp4
+
+https://user-images.githubusercontent.com/21653654/153779889-8116d7ee-8a4d-474c-8d52-3b1f0e175104.mp4
+
+https://user-images.githubusercontent.com/21653654/153779898-dba46433-143e-499a-9315-4316747e6e59.mp4
+
+https://user-images.githubusercontent.com/21653654/153779906-b4196d7d-afd7-4fde-b691-0d7c6a785f8b.mp4
+
+https://user-images.githubusercontent.com/21653654/153779913-36931e65-2739-4d35-8901-22808d8eaced.mp4
+
+https://user-images.githubusercontent.com/21653654/153779919-5157b7df-d59b-48f8-a66c-7982b600e01d.mp4
+
+https://user-images.githubusercontent.com/21653654/153779930-9902b8b3-b035-4c78-ac51-ff97dbb0f266.mp4
+
+https://user-images.githubusercontent.com/21653654/153779937-74ef0a19-8ce8-4d87-84a3-357513c419ed.mp4
 
 ### overcome float32 pitfall for neural point based graphics
 to be filled...
