@@ -2,6 +2,9 @@
 
 Maintained by [Kai Zhang](https://kai-46.github.io/website/). 
 
+## Relevant repos for downstream applications
+- [Satellite-based Neural Radiance Fields](https://github.com/Kai-46/SatelliteNeRF)
+
 ## Overview
 - This is a library dedicated to solving the satellite structure from motion problem.
 - It's a wrapper of the [VisSatSatelliteStereo repo](https://github.com/Kai-46/VisSatSatelliteStereo) for easier use.
