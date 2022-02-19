@@ -8,7 +8,7 @@ Maintained by [Kai Zhang](https://kai-46.github.io/website/).
 ## Overview
 - This is a library dedicated to solving the satellite structure from motion problem.
 - It's a wrapper of the [VisSatSatelliteStereo repo](https://github.com/Kai-46/VisSatSatelliteStereo) for easier use.
-- The outputs are png images and **OpenCV-compatible** pinhole camreas readily deployable to multi-view stereo pipelines targetting ground-level images.
+- The outputs are png images and **OpenCV-compatible** pinhole cameras readily deployable to multi-view stereo pipelines targetting ground-level images.
 
 ## Installation
 Assume you are on a Linux machine with at least one GPU, and have conda installed. Then to install this library, simply by:
