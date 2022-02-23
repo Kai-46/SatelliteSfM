@@ -7,7 +7,8 @@ Maintained by [Kai Zhang](https://kai-46.github.io/website/).
 - [x] release [SatelliteNeRF](https://github.com/Kai-46/SatelliteNeRF) as downstream neural rendering applications
 - [ ] release [TRACK 3: MULTI-VIEW SEMANTIC STEREO](https://ieee-dataport.org/open-access/data-fusion-contest-2019-dfc2019) data preprocessed by SatelliteSfM
 - [ ] re-write [ColmapForVisSat](https://github.com/Kai-46/ColmapForVisSat) as patches to latest [Colmap](https://github.com/colmap/colmap): SfM first, followed by MVS, and finally meshing
-- [ ] port [SatelliteSurfaceReconstruction] meshing algorithm to the new API
+- [ ] port [SatelliteSurfaceReconstruction](https://github.com/SBCV/SatelliteSurfaceReconstruction) meshing algorithm to the new API
+- [ ] release Deep Satellite Stereo as downstream MVS algorithms
 
 ## Relevant repos for downstream applications
 - [Satellite-based Neural Radiance Fields](https://github.com/Kai-46/SatelliteNeRF)
