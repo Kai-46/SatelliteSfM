@@ -8,6 +8,7 @@ I started my computer vision research journey with satellite stereo being my fir
 ## Development roadmaps (Open-source contributions are always welcome!)
 - [x] release SatelliteSfM
 - [x] release [SatelliteNeRF](https://github.com/Kai-46/SatelliteNeRF) as downstream neural rendering applications
+- [ ] release scripts to visualize SatelliteSfM output cameras in 3D
 - [ ] release [TRACK 3: MULTI-VIEW SEMANTIC STEREO](https://ieee-dataport.org/open-access/data-fusion-contest-2019-dfc2019) data preprocessed by SatelliteSfM
 - [ ] re-write [ColmapForVisSat](https://github.com/Kai-46/ColmapForVisSat) as patches to latest [Colmap](https://github.com/colmap/colmap): SfM first, followed by MVS, and finally meshing
 - [ ] port [SatelliteSurfaceReconstruction](https://github.com/SBCV/SatelliteSurfaceReconstruction) meshing algorithm to the new API
