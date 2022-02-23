@@ -9,6 +9,8 @@ Maintained by [Kai Zhang](https://kai-46.github.io/website/).
 - [ ] re-write [ColmapForVisSat](https://github.com/Kai-46/ColmapForVisSat) as patches to latest [Colmap](https://github.com/colmap/colmap): SfM first, followed by MVS, and finally meshing
 - [ ] port [SatelliteSurfaceReconstruction](https://github.com/SBCV/SatelliteSurfaceReconstruction) meshing algorithm to the new API
 - [ ] release Deep Satellite Stereo as downstream MVS algorithms
+- [ ] release code to rectify satellite stereo pairs based on the SatelliteSfM outputs
+- [ ] release code to run stereo matching on rectified stereo pairs, including both classical and deep ones
 
 ## Relevant repos for downstream applications
 - [Satellite-based Neural Radiance Fields](https://github.com/Kai-46/SatelliteNeRF)
