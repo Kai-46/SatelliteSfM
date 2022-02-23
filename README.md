@@ -2,12 +2,16 @@
 
 Maintained by [Kai Zhang](https://kai-46.github.io/website/). 
 
+## Why this repo?
+I started my computer vision research journey with satellite stereo being my first project. But working on the problem makes me feel that there seems to be an unnesseary[?] gap between how the stereo problems are approached in the computer vision community and remote sensing community. And moreover, satellite images seem to attract relatively less attention from the vast computer vision community. I was guessing perhaps this was due to the limited satellite image availability, which seems to be improving these days. With the increasing availability of satellite datasets, I am hoping to further simplify the access to satellite stereo problems for computer vision researchers' and practitioners' with this repo. 
+
 ## Development roadmaps (Open-source contributions are always welcome!)
 - [x] release SatelliteSfM
 - [x] release [SatelliteNeRF](https://github.com/Kai-46/SatelliteNeRF) as downstream neural rendering applications
 - [ ] release [TRACK 3: MULTI-VIEW SEMANTIC STEREO](https://ieee-dataport.org/open-access/data-fusion-contest-2019-dfc2019) data preprocessed by SatelliteSfM
 - [ ] re-write [ColmapForVisSat](https://github.com/Kai-46/ColmapForVisSat) as patches to latest [Colmap](https://github.com/colmap/colmap): SfM first, followed by MVS, and finally meshing
 - [ ] port [SatelliteSurfaceReconstruction](https://github.com/SBCV/SatelliteSurfaceReconstruction) meshing algorithm to the new API
+- [ ] improve documentations of the [SatellitePlaneSweep](https://github.com/Kai-46/SatellitePlaneSweep) and [SatelliteNeRF](https://github.com/Kai-46/SatelliteNeRF).
 - [ ] release Deep Satellite Stereo as downstream MVS algorithms
 - [ ] release code to rectify satellite stereo pairs based on the SatelliteSfM outputs
 - [ ] release code to run stereo matching on rectified stereo pairs, including both classical and deep ones
