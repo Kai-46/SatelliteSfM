@@ -3,7 +3,7 @@
 Maintained by [Kai Zhang](https://kai-46.github.io/website/). 
 
 ## Why this repo?
-I started my computer vision research journey with satellite stereo being my first project. But working on the problem makes me feel that there seems to be an unnesseary[?] gap between how the stereo problems are approached in the computer vision community and remote sensing community. And moreover, satellite images seem to attract relatively less attention from the vast computer vision community. I was guessing perhaps this was due to the limited satellite image availability, which seems to be improving these days. With the increasing availability of satellite datasets, I am hoping to further simplify the access to satellite stereo problems for computer vision researchers' and practitioners' with this repo. 
+I started my computer vision research journey with satellite stereo being my first project. Working on that problem makes me feel that there seems to be an unnesseary[?] gap between how the stereo problems are approached in the computer vision community and remote sensing community. And moreover, satellite images seem to attract relatively less attention from the vast computer vision community. I was guessing perhaps this was due to the limited satellite image availability, which seems to be improving these days. With the increasing availability of satellite datasets, I am hoping to further simplify the access to satellite stereo problems for computer vision researchers' and practitioners' with this repo. 
 
 ## Development roadmaps (Open-source contributions are always welcome!)
 - [x] release SatelliteSfM
