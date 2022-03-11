@@ -9,7 +9,7 @@ I started my computer vision research journey with satellite stereo being my fir
 - [x] release SatelliteSfM
 - [x] release [SatelliteNeRF](https://github.com/Kai-46/SatelliteNeRF) as downstream neural rendering applications
 - [ ] release scripts to visualize SatelliteSfM output cameras in 3D
-- [ ] release [TRACK 3: MULTI-VIEW SEMANTIC STEREO](https://ieee-dataport.org/open-access/data-fusion-contest-2019-dfc2019) data preprocessed by SatelliteSfM
+- [x] release [TRACK 3: MULTI-VIEW SEMANTIC STEREO](https://ieee-dataport.org/open-access/data-fusion-contest-2019-dfc2019) data preprocessed by SatelliteSfM
 - [ ] re-write [ColmapForVisSat](https://github.com/Kai-46/ColmapForVisSat) as patches to latest [Colmap](https://github.com/colmap/colmap): SfM first, followed by MVS, and finally meshing
 - [ ] port [SatelliteSurfaceReconstruction](https://github.com/SBCV/SatelliteSurfaceReconstruction) meshing algorithm to the new API
 - [ ] improve documentations of the [SatellitePlaneSweep](https://github.com/Kai-46/SatellitePlaneSweep) and [SatelliteNeRF](https://github.com/Kai-46/SatelliteNeRF).
@@ -167,6 +167,9 @@ to be filled...
 
 ### overcome float32 pitfall for plane sweep stereo, or patch-based stereo, or deep stereo
 to be filled...
+
+## preprocessed satellite multi-view stereo dataset with ground-truth
+This dataset can be used for evaluating multi-view stereo, running neural rendering, etc. You can download it from [google drive](https://drive.google.com/drive/folders/1Do7oF36sCEBWrcIiCzgHbhF5kQMawjVo?usp=sharing).
 
 ## More handy scripts are coming
 Stay tuned :-)
