@@ -109,7 +109,7 @@ python visualize_satellite_cameras.py
 ```
 
 Red, Green, Blue axes denote east, north, up directions, respectively. For simplicity, each camera is represented by a line pointing from origin to that camera center.
-![Visualize cameras](./readme_resources/visualize_camera.png)
+![Visualize cameras](./readme_resources/visualize_camera.png | width=250)
 
 ### homograhpy-warp one view, then average with another by a plane sequence
 
