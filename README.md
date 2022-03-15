@@ -2,10 +2,28 @@
 
 Maintained by [Kai Zhang](https://kai-46.github.io/website/). 
 
+## Why this repo?
+I started my computer vision research journey with satellite stereo being my first project. Working on that problem makes me feel that there seems to be an unnesseary[?] gap between how the stereo problems are approached in the computer vision community and remote sensing community. And moreover, satellite images seem to attract relatively less attention from the vast computer vision community. I was guessing perhaps this was due to the limited satellite image availability, which seems to be improving these days. With the increasing availability of satellite datasets, I am hoping to further simplify the access to satellite stereo problems for computer vision researchers' and practitioners' with this repo. 
+
+## Development roadmaps (Open-source contributions are always welcome!)
+- [x] release SatelliteSfM
+- [x] release [SatelliteNeRF](https://github.com/Kai-46/SatelliteNeRF) as downstream neural rendering applications
+- [ ] release scripts to visualize SatelliteSfM output cameras in 3D
+- [x] release [TRACK 3: MULTI-VIEW SEMANTIC STEREO](https://ieee-dataport.org/open-access/data-fusion-contest-2019-dfc2019) data preprocessed by SatelliteSfM
+- [ ] re-write [ColmapForVisSat](https://github.com/Kai-46/ColmapForVisSat) as patches to latest [Colmap](https://github.com/colmap/colmap): SfM first, followed by MVS, and finally meshing
+- [ ] port [SatelliteSurfaceReconstruction](https://github.com/SBCV/SatelliteSurfaceReconstruction) meshing algorithm to the new API
+- [ ] improve documentations of the [SatellitePlaneSweep](https://github.com/Kai-46/SatellitePlaneSweep) and [SatelliteNeRF](https://github.com/Kai-46/SatelliteNeRF).
+- [ ] release Deep Satellite Stereo as downstream MVS algorithms
+- [ ] release code to rectify satellite stereo pairs based on the SatelliteSfM outputs
+- [ ] release code to run stereo matching on rectified stereo pairs, including both classical and deep ones
+
+## Relevant repos for downstream applications
+- [Satellite-based Neural Radiance Fields](https://github.com/Kai-46/SatelliteNeRF)
+
 ## Overview
 - This is a library dedicated to solving the satellite structure from motion problem.
 - It's a wrapper of the [VisSatSatelliteStereo repo](https://github.com/Kai-46/VisSatSatelliteStereo) for easier use.
-- The outputs are png images and **OpenCV-compatible** pinhole camreas readily deployable to multi-view stereo pipelines targetting ground-level images.
+- The outputs are png images and **OpenCV-compatible** pinhole cameras readily deployable to multi-view stereo pipelines targetting ground-level images.
 
 ## Installation
 Assume you are on a Linux machine with at least one GPU, and have conda installed. Then to install this library, simply by:
@@ -122,13 +140,36 @@ def pixel2ray(col: torch.Tensor, row: torch.Tensor, K: torch.DoubleTensor, W2C: 
     ray_o = ray_o + ray_d * shift.unsqueeze(-1)  # [N, 3]; float64
     return ray_o.float(), ray_d.float()
 ```
-![novel view](./readme_resources/novel_view.gif)
+<!-- ![novel view](./readme_resources/novel_view.gif) -->
+https://user-images.githubusercontent.com/21653654/153779703-36b50265-ae3b-41ac-8139-2e0bf081f28d.mp4
+
+https://user-images.githubusercontent.com/21653654/153779789-93f68ce9-9cc4-4947-81de-d6d2104ae0ac.mp4
+
+https://user-images.githubusercontent.com/21653654/153779889-8116d7ee-8a4d-474c-8d52-3b1f0e175104.mp4
+
+https://user-images.githubusercontent.com/21653654/153779898-dba46433-143e-499a-9315-4316747e6e59.mp4
+
+https://user-images.githubusercontent.com/21653654/153779906-b4196d7d-afd7-4fde-b691-0d7c6a785f8b.mp4
+
+https://user-images.githubusercontent.com/21653654/153779913-36931e65-2739-4d35-8901-22808d8eaced.mp4
+
+https://user-images.githubusercontent.com/21653654/153779919-5157b7df-d59b-48f8-a66c-7982b600e01d.mp4
+
+https://user-images.githubusercontent.com/21653654/153779930-9902b8b3-b035-4c78-ac51-ff97dbb0f266.mp4
+
+https://user-images.githubusercontent.com/21653654/153779937-74ef0a19-8ce8-4d87-84a3-357513c419ed.mp4
+
+https://user-images.githubusercontent.com/21653654/153780455-939f4e36-794b-4282-b9a1-c1b98e8a1866.mp4
+
 
 ### overcome float32 pitfall for neural point based graphics
 to be filled...
 
 ### overcome float32 pitfall for plane sweep stereo, or patch-based stereo, or deep stereo
 to be filled...
+
+## preprocessed satellite multi-view stereo dataset with ground-truth
+This dataset can be used for evaluating multi-view stereo, running neural rendering, etc. You can download it from [google drive](https://drive.google.com/drive/folders/1Do7oF36sCEBWrcIiCzgHbhF5kQMawjVo?usp=sharing).
 
 ## More handy scripts are coming
 Stay tuned :-)
