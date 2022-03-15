@@ -16,7 +16,10 @@ def parse_tif_image(tiff_fpath):
     year = int(date_time[0:4])
     month = int(date_time[4:6])
     day = int(date_time[6:8])
-    capture_date = [year, month, day]
+    hour = int(date_time[8:10])
+    minute = int(date_time[10:12])
+    second = int(date_time[12:14])
+    capture_date = [year, month, day, hour, minute, second]
 
     rpc_data = dataset.GetMetadata('RPC')
     rpc_dict = {
