@@ -14,8 +14,8 @@ I started my computer vision research journey with satellite stereo being my fir
 - [x] release [TRACK 3: MULTI-VIEW SEMANTIC STEREO](https://ieee-dataport.org/open-access/data-fusion-contest-2019-dfc2019) data preprocessed by SatelliteSfM
 - [x] re-write [ColmapForVisSat](https://github.com/Kai-46/ColmapForVisSat) as patches to latest [Colmap](https://github.com/colmap/colmap): SfM first, followed by MVS, and finally meshing. You can find the re-written version [ColmapForVisSatPatched](https://github.com/SBCV/ColmapForVisSatPatched). Thanks to @SBCV. 
 - [x] release [SatelliteNeuS](https://github.com/Kai-46/SatelliteNeuS) that can reconstruct meshes from multi-date satellite images with varying illuminations 
+- [ ] improve documentations of the [SatellitePlaneSweep](https://github.com/Kai-46/SatellitePlaneSweep) and [SatelliteNeRF](https://github.com/Kai-46/SatelliteNeRF) and [SatelliteNeuS](https://github.com/Kai-46/SatelliteNeuS)
 - [ ] port [SatelliteSurfaceReconstruction](https://github.com/SBCV/SatelliteSurfaceReconstruction) meshing algorithm to the new API
-- [ ] improve documentations of the [SatellitePlaneSweep](https://github.com/Kai-46/SatellitePlaneSweep) and [SatelliteNeRF](https://github.com/Kai-46/SatelliteNeRF).
 - [ ] release Deep Satellite Stereo as downstream MVS algorithms
 - [ ] release code to rectify satellite stereo pairs based on the SatelliteSfM outputs
 - [ ] release code to run stereo matching on rectified stereo pairs, including both classical and deep ones
