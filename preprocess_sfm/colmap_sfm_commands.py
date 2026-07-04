@@ -1,4 +1,5 @@
 import os
+import shutil
 import subprocess
 import multiprocessing
 
@@ -6,12 +7,18 @@ from preprocess_sfm.colmap_sfm_utils import init_posed_sfm
 
 gpu_index = '-1'
 
-COLMAP_BIN = os.path.join(os.path.dirname(__file__), 'ColmapForVisSat/build/__install__/bin/colmap')
+_legacy_colmap = os.path.join(os.path.dirname(__file__), 'ColmapForVisSat/build/__install__/bin/colmap')
+COLMAP_BIN = os.environ.get('COLMAP_BIN') or (_legacy_colmap if os.path.isfile(_legacy_colmap) else 'colmap')
 COLMAP_ENV = os.environ.copy()
 COLMAP_ENV['LD_LIBRARY_PATH'] = os.path.join(os.path.dirname(__file__), 'ColmapForVisSat/build/__install__/lib')
 
-assert (os.path.isfile(COLMAP_BIN)), 'Please install ColmapForVisSat first; '\
+assert os.path.isfile(COLMAP_BIN) or shutil.which(COLMAP_BIN), 'Please install ColmapForVisSat first; '\
         'check {} for instructions'.format(os.path.join(os.path.dirname(__file__), 'install_colmapforvissat.sh '))
+
+# colmap moved this option from SiftMatchingOptions to TwoViewGeometryOptions; detect which one this build has
+_matcher_help_proc = subprocess.run([COLMAP_BIN, 'exhaustive_matcher', '--help'], capture_output=True, text=True, env=COLMAP_ENV)
+_matcher_help = _matcher_help_proc.stdout + _matcher_help_proc.stderr
+MAX_ERROR_FLAG = '--TwoViewGeometry.max_error' if 'TwoViewGeometry.max_error' in _matcher_help else '--SiftMatching.max_error'
 
 
 def bash_run(cmd):
@@ -40,10 +47,10 @@ def run_sift_matching(img_dir, db_file, debug_folder=None):
     cmd = COLMAP_BIN + ' exhaustive_matcher --database_path {} \
                                         --SiftMatching.guided_matching 1 \
                                         --SiftMatching.num_threads 6 \
-                                        --SiftMatching.max_error 3 \
+                                        {} 3 \
                                         --SiftMatching.max_num_matches 50000 \
                                         --SiftMatching.use_gpu 1 \
-                                        --SiftMatching.gpu_index {}'.format(db_file, gpu_index)
+                                        --SiftMatching.gpu_index {}'.format(db_file, MAX_ERROR_FLAG, gpu_index)
     if debug_folder is not None:
         cmd += '  2>&1 | tee {}'.format(os.path.join(os.path.join(debug_folder, 'log_feature_matching.txt')))
     bash_run(cmd)

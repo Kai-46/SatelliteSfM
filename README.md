@@ -35,7 +35,25 @@ I started my computer vision research journey with satellite stereo being my fir
 
 ## Installation
 
-Assume you are on a Linux machine with at least one GPU, and have conda installed. Then to install this library, simply by:
+### Docker (recommended)
+
+Build (set `CUDA_ARCHITECTURES` for your GPU; override `BASE_IMAGE`/`RUNTIME_IMAGE` for newer CUDA):
+
+```bash
+docker build -t satellite-sfm --build-arg CUDA_ARCHITECTURES=80 .   # 80 = A100
+```
+
+Run (interactive with live code edits), mounting your data (see [Inputs](#inputs) for the layout):
+
+```bash
+docker run --gpus '"device=0"' -it --rm -v /path/to/data:/data -v "$PWD":/workdir satellite-sfm
+# then inside the container:
+python satellite_sfm.py --input_folder /data --output_folder /path/to/outputs --run_sfm
+```
+
+### Manual install (conda)
+
+Alternatively, on a Linux machine with at least one GPU and conda installed:
 
 ```bash
 . ./env.sh

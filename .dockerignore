@@ -1,0 +1,18 @@
+.git
+.gitignore
+.dockerignore
+
+**/__pycache__/
+**/*.py[cod]
+*.egg-info/
+
+.DS_Store
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# local data / generated outputs
+data/
+outputs/
+examples/outputs/
